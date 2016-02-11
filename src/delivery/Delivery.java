@@ -34,7 +34,22 @@ public class Delivery {
         D= Integer.parseInt(Fline[2]);
         T= Integer.parseInt(Fline[3]);
         maxLoad= Integer.parseInt(Fline[4]);
+        
+        int Nproducts;
+        int weights[];
+        currentLine = br.readLine();
+        Nproducts = Integer.parseInt(currentLine);
+        weights = new int [Nproducts];
+        String Sweights[] = new String[Nproducts];
+        currentLine = br.readLine();
+        Sweights= currentLine.split(" ");
+        
+        for(int i =0 ; i<Nproducts; i++)
+        {
+            weights[i]= Integer.parseInt(Sweights[i]);
+        }
         System.out.print("done");
+    
     }
     
 }
