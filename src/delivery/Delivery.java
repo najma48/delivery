@@ -25,7 +25,7 @@ public class Delivery {
         BufferedReader br = null;
         String currentLine;
         br = new BufferedReader(new FileReader("busy_day.in"));
-        int R,C,D,T, maxLoad;
+        int R,C,D,T, maxLoad, W;
         currentLine = br.readLine();
         String Fline[] = new String[5];
         Fline = currentLine.split(" ");
@@ -48,6 +48,26 @@ public class Delivery {
         {
             weights[i]= Integer.parseInt(Sweights[i]);
         }
+        
+        currentLine = br.readLine();
+        currentLine = br.readLine();
+        String[] warehouseLocation= currentLine.split(" "); 
+        int W1Location = Integer.parseInt(warehouseLocation[0]);
+        currentLine = br.readLine();
+        String PinW[] = new String[Nproducts];
+        int[][] warehouse = null;
+        String[] pinw2= currentLine.split(" ");       
+        W = Integer.parseInt(pinw2[0]);
+        
+        for (int i = 0; i<Nproducts; i++)
+                {
+                    for (int j=0; j<W; j++)
+                    {
+                        warehouse[i][j]= Integer.parseInt(PinW[i]);
+                    }
+           
+        }
+        
         System.out.print("done");
     
     }
