@@ -51,21 +51,20 @@ public class Delivery {
         
         currentLine = br.readLine();
         currentLine = br.readLine();
-        String[] warehouseLocation= currentLine.split(" "); 
-        int W1Location = Integer.parseInt(warehouseLocation[0]);
         currentLine = br.readLine();
-        String PinW[] = new String[Nproducts];
-        int[][] warehouse = null;
-        String[] pinw2= currentLine.split(" ");       
-        W = Integer.parseInt(pinw2[0]);
-        
+        W = Integer.parseInt(currentLine);
+        String [][] WLocations = new String[W][2];
+        String [][] NofPinW = new String[W][2];
+     
         for (int i = 0; i<Nproducts; i++)
+        {
+            for (int j=0; j<W; j++)
                 {
-                    for (int j=0; j<W; j++)
-                    {
-                        warehouse[i][j]= Integer.parseInt(PinW[i]);
-                    }
-           
+                    currentLine = br.readLine();
+                    WLocations[i][j] = Integer.parseInt(currentLine);
+                    currentLine = br.readLine();
+                    NofPinW[i][j]= Integer.parseInt(currentLine);
+                }
         }
         
         System.out.print("done");
